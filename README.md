@@ -24,11 +24,12 @@ directory. To add a new tool:
 
 1. Create a directory for it, for example `zsh/`.
 2. Put its configuration and `zsh/install.sh` in that directory.
-3. Add `zsh/install.sh` to the root `installers` array.
+3. Add `<tool>/install.sh` to the root `installers` array.
 4. Add the tool to the Contents list below.
 
 ## Contents
 
 - [`tmux/`](tmux/): tmux configuration with Catppuccin, system indicators, and fuzzy session switching.
+- [`zsh/`](zsh/): Oh My Zsh configuration, aliases, and local secret handling.
 
 Each directory contains setup instructions for its tool.
