@@ -40,6 +40,11 @@ opencode() {
     caffeinate -i /opt/homebrew/bin/opencode "$@"
 }
 
+# Keep the machine awake while Codex is active.
+codex() {
+    caffeinate -i "$HOME/.local/bin/codex" "$@"
+}
+
 # Secrets are intentionally local and never committed to this repository.
 secrets_file="${XDG_CONFIG_HOME:-$HOME/.config}/dotfiles/zsh/secrets.zsh"
 if [ -r "$secrets_file" ]; then
