@@ -44,5 +44,7 @@ opencode() {
 secrets_file="${XDG_CONFIG_HOME:-$HOME/.config}/dotfiles/zsh/secrets.zsh"
 if [ -r "$secrets_file" ]; then
     source "$secrets_file"
+else
+    printf 'Secrets file not found: %s\n' "$secrets_file" >&2
 fi
 unset secrets_file
