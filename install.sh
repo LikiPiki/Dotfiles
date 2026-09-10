@@ -4,6 +4,7 @@ set -euo pipefail
 
 repo_dir=$(CDPATH= cd -- "$(dirname -- "$0")" && pwd)
 installers=(
+    "nvim"
     "tmux"
     "zsh"
 )
@@ -14,7 +15,7 @@ fi
 
 for installer in "${installers[@]}"; do
     case "$installer" in
-        tmux|zsh) ;;
+        nvim|tmux|zsh) ;;
         *)
             printf 'Unknown installer: %s\n' "$installer" >&2
             exit 1
