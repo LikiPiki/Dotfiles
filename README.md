@@ -10,6 +10,13 @@ Run the installer from the repository root:
 ./install.sh
 ```
 
+To install only selected tools, pass their directory names:
+
+```sh
+./install.sh tmux
+./install.sh zsh
+```
+
 The root installer delegates to each configured tool installer. It currently
 installs tmux and its dependencies, backs up an existing `~/.tmux.conf`, links
 the tmux configuration from this repository, and installs its plugins.
@@ -17,7 +24,8 @@ the tmux configuration from this repository, and installs its plugins.
 ## Installer Architecture
 
 `install.sh` in the repository root is an orchestrator. It runs the installers
-listed in its `installers` array, currently `tmux/install.sh`.
+listed in its `installers` array, currently `tmux` and `zsh`. With no arguments
+it runs them all; passed names select only those installers.
 
 Each tool owns its configuration, README, and `install.sh` inside its own
 directory. To add a new tool:
